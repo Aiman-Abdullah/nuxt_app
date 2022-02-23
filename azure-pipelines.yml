@@ -74,10 +74,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: NuxtCMSClient'
             inputs:
-              # azureSubscription: $(azureSubscription)
-              azureSubscription: 'Pay-As-You-Go(1ce78759-24c6-47f3-b11e-f1ea12273337)'
+              azureSubscription: $(azureSubscription)
               appType: webAppLinux
-              appName: 'NuxtCMSClient'
+              appName: $(webAppName)
               runtimeStack: 'NODE|14.x'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
