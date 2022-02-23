@@ -19,3 +19,13 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(1ce78759-24c6-47f3-b11e-f1ea12273337)'
+    appType: 'webAppLinux'
+    WebAppName: 'NuxtCMSClient'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'NODE|14-lts'
+    StartupCommand: 'npm run start'
