@@ -17,6 +17,10 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
+  azureSubscription): '3f1d8a91-940f-4c9d-b8d7-b146893bbd27'
+  webAppName: 'nubxt-app-2'
+
+
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
@@ -54,6 +58,6 @@ stages:
     - task: AzureWebAppContainer@1
       displayName: 'Azure Web App on Container Deploy'
       inputs:
-        azureSubscription: '3f1d8a91-940f-4c9d-b8d7-b146893bbd27'
-        appName: 'nubxt-app-2'
+        azureSubscription: $(azureSubscription)
+        appName: $(webAppName)
         containers: $(containerRegistry)/$(imageRepository):$(tag)      
