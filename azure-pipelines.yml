@@ -54,10 +54,4 @@ stages:
         tags: |
           $(tag)
 
-    ## Add the below snippet at the end of your pipeline
-    - task: AzureWebAppContainer@1
-      displayName: 'Azure Web App on Container Deploy'
-      inputs:
-        azureSubscription: $(azureSubscription)
-        appName: $(webAppName)
-        containers: $(containerRegistry)/$(imageRepository):$(tag)      
+     
