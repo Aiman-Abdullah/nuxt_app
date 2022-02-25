@@ -15,7 +15,7 @@ variables:
   imageRepository: 'aimanabdullahnuxtapp'
   containerRegistry: 'containeraiman.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'latest'
 
   azureSubscription): '3f1d8a91-940f-4c9d-b8d7-b146893bbd27'
   webAppName: 'nubxt-app-2'
@@ -51,7 +51,6 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: 'latest'
 
      
