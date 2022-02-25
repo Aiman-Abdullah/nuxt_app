@@ -9,6 +9,18 @@ trigger:
 variables:
   # Enable debug mode
   System.Debug: true
+  
+   #Check for main branch deployment
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
+  # Azure Resource Manager connection created during pipeline creation
+  azureSubscription: '6bcbce78-67e4-41e1-a06d-f16c874d25a9'
+
+  # Web app name
+  webAppName: 'NuxtCMSClient'
+
+  # Environment name
+  environmentName: 'NuxtCMSClient'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
