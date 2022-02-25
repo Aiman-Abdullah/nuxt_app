@@ -20,7 +20,6 @@ variables:
   azureSubscription): '3f1d8a91-940f-4c9d-b8d7-b146893bbd27'
   webAppName: 'nubxt-app-2'
 
-
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
